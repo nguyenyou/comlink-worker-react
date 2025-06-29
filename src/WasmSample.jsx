@@ -1,4 +1,5 @@
 import wasmUrl from './pdfium.wasm?url'
+import samplePdfUrl from './sample.pdf?url'
 import createPdfium from './pdfium'
 import { functions } from './functions'
 
@@ -33,7 +34,7 @@ export default function WasmSample() {
 
     mod.PDFium_Init();
 
-    const fileContent = await fetch("/sample.pdf").then((res) => res.arrayBuffer());
+    const fileContent = await fetch(samplePdfUrl).then((res) => res.arrayBuffer());
 
     const array = new Uint8Array(fileContent);
     const length = array.length;
