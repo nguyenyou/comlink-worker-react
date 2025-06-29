@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+pdfium
+.gclient_previous_custom_vars
+.gcs_entries
+.gclient_entries
+.cipd
+.gclient_previous_sync_commits
+emsdk
