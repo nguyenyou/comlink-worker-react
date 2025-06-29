@@ -29,4 +29,3 @@ pdfium
 .cipd
 .gclient_previous_sync_commits
 emsdk
-pdfium.wasm
