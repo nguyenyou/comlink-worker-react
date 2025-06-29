@@ -57,8 +57,8 @@ deps += [ "//skia" ]
 We need to add a target os support for wasm. Find and add the `target_os` support for wasm, the `target_os` can be `emscripten` or `wasm`, it's up to you, but remember to update your code:
 
 ```
-else if (target_os == "wasm") {
-  _default_toolchain = "//build/toolchain/wasm:emscripten"
+else if (target_os == "emscripten") {
+  _default_toolchain = "//build/toolchain/wasm:$target_cpu"
 } else {
   assert(false, "Unsupported target_os: $target_os")
 }
