@@ -1,6 +1,7 @@
 import * as React from "react";
 import DocumentLoader from "./DocumentLoader";
 import ComlinkSample from "./ComlinkSample";
+import WasmSample from "./WasmSample";
 
 export default function App({ worker, workerApi }) {
   const [input, setInput] = React.useState("");
@@ -10,6 +11,7 @@ export default function App({ worker, workerApi }) {
     <div className="p-10">
       <ComlinkSample workerApi={workerApi} />
       <DocumentLoader workerApi={workerApi} />
+      <WasmSample />
       {/* <div className="flex gap-4">
         <input
           className="input"

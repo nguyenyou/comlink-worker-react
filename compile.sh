@@ -20,4 +20,4 @@ em++ ./custom.cpp \
   -Wall \
   --no-entry \
   -o \
-  ./pdfium.js
+  ./src/pdfium.js

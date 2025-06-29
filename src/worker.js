@@ -1,16 +1,13 @@
 import * as Comlink from "comlink";
-
-// onmessage = (e) => {
-//   console.log("Message received from main script");
-//   const workerResult = `Result: ${e.data[0] * e.data[0]}`;
-//   console.log("Posting message back to main script");
-//   postMessage(workerResult);
-// };
-
+import { createPdfium } from "./pdfium.js";
 
 const obj = {
   counter: 0,
   doc: null,
+  async initPdfium(wasmBinary) {
+    const pdfium = await createPdfium({ wasmBinary });
+    console.log(pdfium)
+  },
   inc() {
     console.log("inc");
     this.counter++;

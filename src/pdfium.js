@@ -4756,6 +4756,8 @@ function checkIncomingModuleAPI() {
 var _PDFium_Init = Module['_PDFium_Init'] = makeInvalidEarlyAccess('_PDFium_Init');
 var _malloc = Module['_malloc'] = makeInvalidEarlyAccess('_malloc');
 var _free = Module['_free'] = makeInvalidEarlyAccess('_free');
+var _FPDF_LoadMemDocument = Module['_FPDF_LoadMemDocument'] = makeInvalidEarlyAccess('_FPDF_LoadMemDocument');
+var _FPDF_GetPageCount = Module['_FPDF_GetPageCount'] = makeInvalidEarlyAccess('_FPDF_GetPageCount');
 var _fflush = makeInvalidEarlyAccess('_fflush');
 var _emscripten_stack_get_end = makeInvalidEarlyAccess('_emscripten_stack_get_end');
 var _emscripten_stack_get_base = makeInvalidEarlyAccess('_emscripten_stack_get_base');
@@ -4771,6 +4773,8 @@ function assignWasmExports(wasmExports) {
   Module['_PDFium_Init'] = _PDFium_Init = createExportWrapper('PDFium_Init', 0);
   Module['_malloc'] = _malloc = createExportWrapper('malloc', 1);
   Module['_free'] = _free = createExportWrapper('free', 1);
+  Module['_FPDF_LoadMemDocument'] = _FPDF_LoadMemDocument = createExportWrapper('FPDF_LoadMemDocument', 3);
+  Module['_FPDF_GetPageCount'] = _FPDF_GetPageCount = createExportWrapper('FPDF_GetPageCount', 1);
   _fflush = createExportWrapper('fflush', 1);
   _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'];
   _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'];
