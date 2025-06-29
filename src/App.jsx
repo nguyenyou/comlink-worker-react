@@ -1,4 +1,5 @@
 import * as React from "react";
+import DocumentLoader from "./DocumentLoader";
 
 export default function App({ worker }) {
   const [input, setInput] = React.useState("");
@@ -13,6 +14,7 @@ export default function App({ worker }) {
 
   return (
     <div className="p-10">
+      <DocumentLoader />
       <div className="flex gap-4">
         <input
           className="input"
