@@ -1,7 +1,15 @@
-import { useState } from "react";
+import * as React from "react";
 
 export default function App({ worker }) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = React.useState("");
+  const [result, setResult] = React.useState("");
+
+  React.useEffect(() => {
+    worker.onmessage = (e) => {
+      console.log("Message received from worker", e.data);
+      setResult(e.data);
+    };
+  }, [worker]);
 
   return (
     <div>
@@ -15,6 +23,7 @@ export default function App({ worker }) {
       <button onClick={() => worker.postMessage([Number(input)])}>
         Send message to worker
       </button>
+      <p>{result}</p>
     </div>
   );
 }
