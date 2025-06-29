@@ -12,18 +12,26 @@ export default function App({ worker }) {
   }, [worker]);
 
   return (
-    <div>
-      <input
-        type="text"
-        name=""
-        id=""
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button onClick={() => worker.postMessage([Number(input)])}>
-        Send message to worker
-      </button>
-      <p>{result}</p>
+    <div className="p-10">
+      <div className="flex gap-4">
+        <input
+          className="input"
+          type="text"
+          name=""
+          id=""
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button
+          className="btn"
+          onClick={() => worker.postMessage([Number(input)])}
+        >
+          Send message to worker
+        </button>
+      </div>
+      <div>
+        <p>{result}</p>
+      </div>
     </div>
   );
 }
