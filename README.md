@@ -135,7 +135,8 @@ ninja -C out/prod pdfium -v
 ### Compile wasm
 
 ```sh
-em++ ./pdfium/out/prod/obj/libpdfium.a \
+em++ ./custom.cpp \
+  ./pdfium/out/prod/obj/libpdfium.a \
   -g \
   -v \
   -sEXPORT_ES6=1 \
@@ -147,8 +148,8 @@ em++ ./pdfium/out/prod/obj/libpdfium.a \
   -sUSE_ZLIB=1 \
   -sUSE_LIBJPEG=1 \
   -sASSERTIONS=1 \
-  -sEXPORTED_RUNTIME_METHODS=ccall \
-  -sEXPORTED_FUNCTIONS=_malloc,_free \
+  -sEXPORTED_RUNTIME_METHODS=wasmExports,cwrap,ccall,setValue,getValue,UTF8ToString,UTF16ToString,stringToUTF8,stringToUTF16,HEAP8, HEAP16, HEAP32, HEAPU8, HEAPU16, HEAPU32, HEAPF32, HEAPF64  \
+  -sEXPORTED_FUNCTIONS=_malloc,_free,_PDFiumExt_Init \
   -lpdfium \
   -L./pdfium/out/prod/obj \
   -I./pdfium/public \
@@ -157,5 +158,4 @@ em++ ./pdfium/out/prod/obj/libpdfium.a \
   --no-entry \
   -o \
   ./pdfium.js
-
 ```

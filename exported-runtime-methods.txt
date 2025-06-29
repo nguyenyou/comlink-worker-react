@@ -1,0 +1,1 @@
+wasmExports,cwrap,ccall,setValue,getValue,UTF8ToString,UTF16ToString,stringToUTF8,stringToUTF16,HEAP8,HEAP16,HEAP32,HEAPU8,HEAPU16,HEAPU32,HEAPF32,HEAPF64
