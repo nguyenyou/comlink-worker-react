@@ -1,5 +1,5 @@
 import * as Comlink from "comlink";
-import { createPdfium } from "./pdfium.js";
+import createPdfium from "./pdfium.js";
 
 const obj = {
   counter: 0,
