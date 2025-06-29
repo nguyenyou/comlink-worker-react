@@ -9,7 +9,7 @@ export default function App({ worker, workerApi }) {
   return (
     <div className="p-10">
       <ComlinkSample workerApi={workerApi} />
-      <DocumentLoader />
+      <DocumentLoader workerApi={workerApi} />
       {/* <div className="flex gap-4">
         <input
           className="input"

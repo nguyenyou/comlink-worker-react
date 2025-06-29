@@ -11,7 +11,7 @@ async function readFile(file) {
   });
 }
 
-export default function DocumentLoader() {
+export default function DocumentLoader({ workerApi }) {
   const [url, setUrl] = useState("/compressed.tracemonkey-pldi-09.pdf");
   const [file, setFile] = useState(null);
 
@@ -28,7 +28,9 @@ export default function DocumentLoader() {
 
   const handleLoadDocument = async () => {
     const fileContent = await fetch(url).then((res) => res.arrayBuffer());
+    console.log("fileContent is in main thread 👇");
     console.log(fileContent);
+    workerApi.openDoc(fileContent);
   };
 
   return (

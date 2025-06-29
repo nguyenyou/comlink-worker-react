@@ -7,8 +7,10 @@ import * as Comlink from "comlink";
 //   postMessage(workerResult);
 // };
 
+
 const obj = {
   counter: 0,
+  doc: null,
   inc() {
     console.log("inc");
     this.counter++;
@@ -28,6 +30,11 @@ const obj = {
       }, 1000);
     });
   },
+  openDoc(buffer) {
+    this.doc = buffer;
+    console.log("doc is opened in worker thread 👇");
+    console.log(buffer)
+  }
 };
 
 Comlink.expose(obj);
