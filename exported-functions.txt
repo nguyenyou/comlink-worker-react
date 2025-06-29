@@ -1,1 +1,1 @@
-_malloc,_free,_PDFium_Init,_FPDF_LoadMemDocument,_FPDF_GetPageCount
+_malloc,_free,_PDFium_Init,_FPDF_LoadMemDocument,_FPDF_GetPageCount,_FPDF_GetPageSizeByIndexF

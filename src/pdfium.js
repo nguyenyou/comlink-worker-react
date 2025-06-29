@@ -4758,6 +4758,7 @@ var _malloc = Module['_malloc'] = makeInvalidEarlyAccess('_malloc');
 var _free = Module['_free'] = makeInvalidEarlyAccess('_free');
 var _FPDF_LoadMemDocument = Module['_FPDF_LoadMemDocument'] = makeInvalidEarlyAccess('_FPDF_LoadMemDocument');
 var _FPDF_GetPageCount = Module['_FPDF_GetPageCount'] = makeInvalidEarlyAccess('_FPDF_GetPageCount');
+var _FPDF_GetPageSizeByIndexF = Module['_FPDF_GetPageSizeByIndexF'] = makeInvalidEarlyAccess('_FPDF_GetPageSizeByIndexF');
 var _fflush = makeInvalidEarlyAccess('_fflush');
 var _emscripten_stack_get_end = makeInvalidEarlyAccess('_emscripten_stack_get_end');
 var _emscripten_stack_get_base = makeInvalidEarlyAccess('_emscripten_stack_get_base');
@@ -4775,6 +4776,7 @@ function assignWasmExports(wasmExports) {
   Module['_free'] = _free = createExportWrapper('free', 1);
   Module['_FPDF_LoadMemDocument'] = _FPDF_LoadMemDocument = createExportWrapper('FPDF_LoadMemDocument', 3);
   Module['_FPDF_GetPageCount'] = _FPDF_GetPageCount = createExportWrapper('FPDF_GetPageCount', 1);
+  Module['_FPDF_GetPageSizeByIndexF'] = _FPDF_GetPageSizeByIndexF = createExportWrapper('FPDF_GetPageSizeByIndexF', 3);
   _fflush = createExportWrapper('fflush', 1);
   _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'];
   _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'];

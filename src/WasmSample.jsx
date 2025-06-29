@@ -3,7 +3,7 @@ import samplePdfUrl from "./sample.pdf?url";
 import createPdfium from "./pdfium";
 import { functions } from "./functions";
 
-let mod = {}
+let mod = {};
 
 function malloc(size) {
   const ptr = mod.pdfium.wasmExports.malloc(size);
@@ -33,7 +33,7 @@ export default function WasmSample() {
 
     mod.PDFium_Init();
 
-    console.log("Init DONE")
+    console.log("Init DONE");
   };
 
   const handleLoadDocument = async () => {
@@ -57,6 +57,17 @@ export default function WasmSample() {
 
     const pageCount = mod.FPDF_GetPageCount(docPtr);
     console.log("pageCount:", pageCount);
+    const sizePtr = malloc(8);
+    const index = 0;
+    const result = mod.FPDF_GetPageSizeByIndexF(docPtr, index, sizePtr);
+    const page = {
+      index,
+      size: {
+        width: mod.pdfium.getValue(sizePtr, "float"),
+        height: mod.pdfium.getValue(sizePtr + 4, "float"),
+      },
+    };
+    console.log("page:", page);
   };
 
   return (
